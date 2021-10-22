@@ -1,0 +1,445 @@
+@import "reset";
+@import "variables";
+@import "mixin";
+@import 'media';
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+	font-family: 'PT Sans';
+	font-weight: normal;
+	font-size: 13px;
+	line-height: 18px;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+  position: relative;
+}
+
+.title{
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  line-height: 48px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header {
+  &__top-inner, &__menu-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__top-inner{
+    padding: 14px 0;
+  }
+  &__menu-inner{
+    padding: 31px 0 24px;
+  }
+  &-top{
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+    &__list{
+      display: flex;
+    }
+    &__item{
+      font-family: 'PT Sans', sans-serif;
+      color: #969696;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__item::after{
+      content: '|';
+      margin-left: 14px;
+      margin-right: 14px;
+    }
+    &__item:last-child::after {
+      display: none;
+    }
+    &__item-phone{
+      font-family: 'PT Sans',
+      sans-serif;
+      color: #969696;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    &__item-img{
+      margin-right: 15px;
+    }
+    &__login-link{
+      font-family: 'PT Sans', sans-serif;
+      color: #969696;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+  &__menu{
+    background: #0F0F0F;
+  }
+  &-menu{
+    &__items{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &__btn {
+      padding: 31px 0 24px;
+      background-color: #0F0F0F;
+      color: #969696;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+    }
+
+    &__btn:hover {
+      background: #1F1F1F;
+      color: #fff;
+    }
+
+    &__btn-leftside {
+      position: absolute;
+      margin-left: -966px;
+    }
+  }
+}
+
+.about{
+  background-image: url(../images/about-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 200px;
+  &__img{
+    margin-top: 160px;
+  }
+  &__text{
+    font-family: 'PT Sans', sans-serif;
+    margin-top: 80px;
+    max-width: 730px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.collection{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__content{
+    width: 55%;
+    padding: 93px 0;
+  }
+  &__title{
+    position: relative;
+    font-weight: 700;
+  }
+  &__title::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+  .content{
+    &__items {
+      padding-top: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 50px;
+    }
+    &__item-img{
+      background: #191B1C;
+      padding: 55px 22px;
+    }
+    &__item-name{
+      font-family: 'Playfair Display', serif;
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+    &__item-text{
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      line-height: 21px;
+      color: #D0D0D0;
+      font-weight: 700;
+    }
+  }
+  &__bg{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    background-image: url(../images/collectionman-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 100px;
+  }
+  &__bg-title{
+    position: relative;
+    margin-bottom: 60px;
+    font-weight: 700;
+  }
+  &__bg-title::after{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    left: 50%;
+    bottom: -30px;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+  &__btn{
+    align-items: center;
+    padding: 12px 28px;
+    text-transform: uppercase;
+    border: 1px solid #FFFFFF;
+    font-size: 18px;
+    line-height: 23px;
+    background-color: transparent;
+    color: #fff;
+  }
+  &__btn-man{
+    width: 138px;
+    height: 47px;
+  }
+}
+
+.collection-old{
+  &__items{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__bg{
+    width: 45%;
+    background-image: url(../images/collectioncostume-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__content{
+    width: 55%;
+    padding: 100px 0;
+  }
+  &__title{
+    padding-bottom: 80px;
+    position: relative;
+  }
+  &__title::after{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+  &__item{
+    text-align: center;
+    display: grid;
+    justify-content: center;
+  }
+  &__text{
+    width: 471px;
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 61px;
+  }
+}
+
+.new{
+  &__item{
+    padding-top: 120px;
+    padding-bottom: 150px;
+  }
+  &__title{
+    font-weight: 700;
+    position: relative;
+  }
+  &__title::after{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+  }
+  .content {
+    &__items {
+      padding-top: 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-row-gap: 40px;
+    }
+
+    &__item-img {
+      background: #191B1C;
+      padding: 55px 22px;
+    }
+
+    &__item-name {
+      font-family: 'Playfair Display', serif;
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+
+    &__item-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      line-height: 21px;
+      color: #D0D0D0;
+      font-weight: 700;
+    }
+  }
+}
+
+.brands{
+  background-color: #0F0F0F;
+  &__title{
+    font-weight: 700;
+    padding: 60px 0 80px;
+    position: relative;
+  }
+  &__title::after{
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 1px;
+    background-color: #fff;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 80px;
+  }
+}
+
+.footer{
+  &__content{
+    background-image: url(../images/footer-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0 100px;
+    text-align: left;
+  }
+  &__title{
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 32px;
+    font-family: 'Playfair Display', serif;
+    padding-bottom: 40px;
+  }
+  &__info-text{
+    width: 350px;
+    font-size: 14px;
+    line-height: 21px;
+  }
+  &__categories-items{
+    
+  }
+  &__categories-btn{
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    background-color: #0F0F0F;
+    color: #D0D0D0
+  }
+  &__miling-text{
+    width: 355px;
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 40px;
+  }
+  &__mailing-input{
+    border: none;
+    width: 210px;
+    height: 42px;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #D0D0D0;
+  }
+  &__mailing-btn{
+    border: none;
+    padding: 10px 20px;
+    font-style: 14px;
+    line-height: 21px;
+    margin-left: -3px;
+    background-color: #0F0F0F;
+    color: #FFFFFF;
+  }
+  &__copyright{
+    background-color: #0F0F0F;
+  }
+  &__copyright-items{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__copyright-item{
+    font-size: 12px;
+    line-height: 16px;
+    color: #D0D0D0;
+    padding: 17px 0;
+  }
+}
+
