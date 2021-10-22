@@ -56,7 +56,7 @@ ul {
     padding: 14px 0;
   }
   &__menu-inner{
-    padding: 31px 0 24px;
+    padding: 27.5px 0 27px;
   }
   &-top{
     &__info {
@@ -98,6 +98,9 @@ ul {
       font-size: 12px;
       line-height: 16px;
     }
+    &__login{
+      color: #969696;
+    }
   }
   &__menu{
     background: #0F0F0F;
@@ -107,9 +110,11 @@ ul {
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      gap: 40px;
     }
     &__btn {
-      padding: 31px 0 24px;
+      padding: 31px 20px;
       background-color: #0F0F0F;
       color: #969696;
       font-size: 14px;
@@ -121,10 +126,11 @@ ul {
       background: #1F1F1F;
       color: #fff;
     }
-
-    &__btn-leftside {
-      position: absolute;
-      margin-left: -966px;
+    &__item-search{
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
     }
   }
 }
@@ -283,8 +289,9 @@ ul {
   }
   &__item{
     text-align: center;
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   &__text{
     width: 471px;
@@ -394,7 +401,9 @@ ul {
     line-height: 21px;
   }
   &__categories-items{
-    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
   &__categories-btn{
     color: #fff;
@@ -421,7 +430,7 @@ ul {
   }
   &__mailing-btn{
     border: none;
-    padding: 10px 20px;
+    padding: 11px 20px;
     font-style: 14px;
     line-height: 21px;
     margin-left: -3px;
